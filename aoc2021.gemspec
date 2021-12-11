@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
     Refer to the `rspec` tests for day-to-day code descriptions,
     with the "Actual" `describe` stanzas using live data (no expectations therein).
   }
-  spec.homepage      = %q{https://github.com/darthp8r/aoc2021.rb}
+# spec.homepage      = %q{https://github.com/darthp8r/aoc2021.rb}
 
 # # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
 # # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
 # spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
 #   `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
 # end
-  spec.files         = Dir["*.md","{bin,lib,spec}/**/*.rb"]
+  spec.files         = Dir["*.md","{bin,lib,spec}/**/*.{rb,txt,out}"]
 # spec.bindir        = "bin"
 # spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
