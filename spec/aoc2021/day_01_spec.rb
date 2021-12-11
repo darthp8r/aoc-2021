@@ -2,7 +2,7 @@ module Aoc2021
   RSpec.describe SonarSweep do
     context "Sample" do
       subject do
-        SonarSweep.new Aoc2021.file_to_list __FILE__.gsub('spec.rb', 'sample.txt')
+        SonarSweep.new Support.file_to_list __FILE__.gsub('spec.rb', 'sample.txt')
       end
 
       describe "Part 1" do
@@ -20,7 +20,7 @@ module Aoc2021
 
     context "Actual" do
       subject do
-        SonarSweep.new Aoc2021.file_to_list __FILE__.gsub('spec.rb', 'actual.txt')
+        SonarSweep.new Support.file_to_list __FILE__.gsub('spec.rb', 'actual.txt')
       end
 
       describe "Part 1" do
