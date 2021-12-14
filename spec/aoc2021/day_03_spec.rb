@@ -20,6 +20,17 @@ module Aoc2021
       end
 
       describe "Part 2" do
+        it "sample data agrees on oxygen" do
+          expect(subject.available_o2).to eq 23
+        end
+
+        it "sample data agrees on co2 scrubbed" do
+          expect(subject.scrubbed_co2).to eq 10
+        end
+
+        it "sample data agrees on life support rating consumption" do
+          expect(subject.life_support_rating).to eq 230
+        end
       end
     end
 
@@ -39,6 +50,9 @@ module Aoc2021
       end
 
       describe "Part 2" do
+        it "actual answer above" do
+          pp subject.life_support_rating
+        end
       end
     end
   end
