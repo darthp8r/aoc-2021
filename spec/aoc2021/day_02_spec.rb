@@ -1,9 +1,10 @@
 module Aoc2021
   RSpec.describe Dive do
     context "Sample" do
-      subject do
-        Dive.new Support.file_to_list __FILE__.gsub('spec.rb', 'sample.txt')
+      before(:all) do
+        @subject = Dive.new Support.file_to_list __FILE__.gsub('spec.rb', 'sample.txt')
       end
+      subject { @subject }
 
       describe "Part 1" do
         it "sample data agrees" do
@@ -19,16 +20,17 @@ module Aoc2021
     end
 
     context "Actual" do
-      subject do
-        Dive.new Support.file_to_list __FILE__.gsub('spec.rb', 'actual.txt')
+      before(:all) do
+        @subject = Dive.new Support.file_to_list __FILE__.gsub('spec.rb', 'actual.txt')
       end
+      subject { @subject }
 
       describe "Part 1" do
         it "actual answer above" do
           pp subject.position
         end
 
-        it "survives part two" do
+        it "results survive" do
           expect(subject.position).to eq 1648020
         end
       end
@@ -36,6 +38,10 @@ module Aoc2021
       describe "Part 2" do
         it "actual answer above" do
           pp subject.position_reinterpreted
+        end
+
+        it "results survive" do
+          expect(subject.position_reinterpreted).to eq 1759818555
         end
       end
     end

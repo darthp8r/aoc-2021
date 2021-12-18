@@ -17,10 +17,9 @@ module Aoc2021
     end
 
     def three_by_three report=@report
-      threes = []
-      while 3 <= report.length do
-        threes << report[0] + report[1] + report[2]
-        report.shift
+      threes = report.each_cons(3).inject([]) do |memo, three|
+        memo << three[0] + three[1] + three[2]
+        memo
       end
       increasings threes
     end

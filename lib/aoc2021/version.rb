@@ -1,3 +1,3 @@
 module Aoc2021
-  VERSION = "3.2"
+  VERSION = "4.2"
 end
