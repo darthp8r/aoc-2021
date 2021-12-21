@@ -1,9 +1,10 @@
 module Aoc2021
   RSpec.describe Classname do
     context "Sample" do
-      subject do
-        Classname.new Support.file_to_list __FILE__.gsub('spec.rb', 'sample.txt')
+      before(:all) do
+        @subject = Classname.new Support.file_to_list __FILE__.gsub('spec.rb', 'sample.txt')
       end
+      subject { @subject }
 
       describe "Part 1" do
         it "sample data agrees" do
@@ -11,17 +12,18 @@ module Aoc2021
         end
       end
 
-      describe "Part 2" do
-        it "sample data agrees" do
+      describe "Part 2" ,:skip do
+        it "sample data agrees" ,:skip do
           expect(subject.something_else).to eq 5
         end
       end
     end
 
-    context "Actual", :skip do
-      subject do
-        Classname.new Support.file_to_list __FILE__.gsub('spec.rb', 'actual.txt')
+    context "Actual" ,:skip do
+      before(:all) do
+        @subject = Classname.new Support.file_to_list __FILE__.gsub('spec.rb', 'actual.txt')
       end
+      subject { @subject }
 
       describe "Part 1" do
         it "earlier results survive" do
@@ -33,7 +35,7 @@ module Aoc2021
         end
       end
 
-      describe "Part 2", :skip do
+      describe "Part 2" ,:skip do
         it "actual answer above" do
           pp subject.something_else
         end
