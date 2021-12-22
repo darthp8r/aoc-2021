@@ -11,6 +11,8 @@ require "aoc2021/giant_squid"
 
 require "aoc2021/hydrothermal_venture"
 
+require "aoc2021/lanternfish"
+
 module Aoc2021
   class Error < StandardError; end
   # Your code goes here...

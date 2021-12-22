@@ -7,7 +7,10 @@ module Aoc2021
       subject { @subject }
 
       describe "Part 1" do
-        it "sample data agrees" do
+        it "dunsels" do
+        end
+
+        it "sample data agrees" ,:skip do
           expect(subject.something).to eq 7
         end
       end
