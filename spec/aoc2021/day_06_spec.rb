@@ -57,18 +57,22 @@ module Aoc2021
       end
 
       describe "Part 1" do
-        it "earlier results survive" do
-          expect(subject.propagate(80).inject(:+)).to eq 380612
-        end
-
         it "actual answer above" do
           pp subject.propagate(80).inject(:+)
+        end
+
+        it "results survive" do
+          expect(subject.propagate(80).inject(:+)).to eq 380612
         end
       end
 
       describe "Part 2" do
         it "actual answer above" do
           pp subject.propagate(256).inject(:+)
+        end
+
+        it "results survive" do
+          expect(subject.propagate(256).inject(:+)).to eq 1710166656900
         end
       end
     end

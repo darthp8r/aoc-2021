@@ -24,11 +24,7 @@ module Aoc2021
           expect(subject.unmarked_products).to eq [4512, 2192, 1924]
         end
 
-        it "actual answer above" do
-          pp subject.unmarked_products.first
-        end
-
-        it "results survive" do
+        it "sample data agrees" do
           expect(subject.unmarked_products.first).to eq 4512
         end
       end

@@ -26,18 +26,22 @@ module Aoc2021
       subject { @subject }
 
       describe "Part 1" do
-        it "earlier results survive" do
-          expect(subject.overlaps).to eq 6572
-        end
-
         it "actual answer above" do
           pp subject.overlaps(diagonal: true)
+        end
+
+        it "results survive" do
+          expect(subject.overlaps).to eq 6572
         end
       end
 
       describe "Part 2" do
         it "actual answer above" do
           pp subject.overlaps(diagonal: true)
+        end
+
+        it "results survive" do
+          expect(subject.overlaps(diagonal: true)).to eq 21466
         end
       end
     end
