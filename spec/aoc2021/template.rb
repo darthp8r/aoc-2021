@@ -29,18 +29,22 @@ module Aoc2021
       subject { @subject }
 
       describe "Part 1" do
-        it "earlier results survive" do
-          expect(subject.something).to eq 1559
-        end
-
         it "actual answer above" do
           pp subject.something
+        end
+
+        it "results survive" do
+          expect(subject.something).to eq 1559
         end
       end
 
       describe "Part 2" ,:skip do
         it "actual answer above" do
           pp subject.something_else
+        end
+
+        it "results survive" do
+          expect(subject.something_else).to eq 1559
         end
       end
     end

@@ -13,6 +13,8 @@ require "aoc2021/hydrothermal_venture"
 
 require "aoc2021/lanternfish"
 
+require "aoc2021/treachery_of_whales"
+
 module Aoc2021
   class Error < StandardError; end
   # Your code goes here...
