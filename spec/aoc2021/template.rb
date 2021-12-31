@@ -11,13 +11,13 @@ module Aoc2021
         end
 
         it "sample data agrees" ,:skip do
-          expect(subject.something).to eq 7
+          expect(subject.part_one).to eq 1
         end
       end
 
       describe "Part 2" ,:skip do
         it "sample data agrees" ,:skip do
-          expect(subject.something_else).to eq 5
+          expect(subject.part_deux).to eq 2
         end
       end
     end
@@ -30,21 +30,21 @@ module Aoc2021
 
       describe "Part 1" do
         it "actual answer above" do
-          pp subject.something
+          pp subject.part_one
         end
 
         it "results survive" do
-          expect(subject.something).to eq 1559
+          expect(subject.part_one).to eq 1111
         end
       end
 
       describe "Part 2" ,:skip do
         it "actual answer above" do
-          pp subject.something_else
+          pp subject.part_deux
         end
 
         it "results survive" do
-          expect(subject.something_else).to eq 1559
+          expect(subject.part_deux).to eq 2222
         end
       end
     end

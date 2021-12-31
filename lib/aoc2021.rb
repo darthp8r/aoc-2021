@@ -17,6 +17,8 @@ require "aoc2021/treachery_of_whales"
 
 require "aoc2021/seven_segment_search"
 
+require "aoc2021/smoke_basin"
+
 module Aoc2021
   class Error < StandardError; end
   # Your code goes here...

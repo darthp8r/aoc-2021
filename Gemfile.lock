@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    aoc2021 (8.2)
+    aoc2021 (9.1)
 
 GEM
   remote: https://rubygems.org/
