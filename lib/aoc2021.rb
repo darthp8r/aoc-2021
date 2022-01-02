@@ -19,6 +19,8 @@ require "aoc2021/seven_segment_search"
 
 require "aoc2021/smoke_basin"
 
+require "aoc2021/syntax_scoring"
+
 module Aoc2021
   class Error < StandardError; end
   # Your code goes here...

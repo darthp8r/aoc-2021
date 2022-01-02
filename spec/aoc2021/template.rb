@@ -15,7 +15,7 @@ module Aoc2021
         end
       end
 
-      describe "Part 2" ,:skip do
+      describe "Part 2" do
         it "sample data agrees" ,:skip do
           expect(subject.part_deux).to eq 2
         end
