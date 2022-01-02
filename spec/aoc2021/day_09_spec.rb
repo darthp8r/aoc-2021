@@ -83,11 +83,6 @@ module Aoc2021
       subject { @subject }
 
       describe "Part 1" do
-        it "dunsels" do
-          pp subject.report
-          pp subject.avoidance
-        end
-
         it "sample data agrees" do
           expect(subject.sum_of_low_points).to eq 15
         end
@@ -116,34 +111,33 @@ module Aoc2021
         end
       end
 
-      describe "Part 2" do
+      describe "Part 2" ,:skip => "261568 is too low" do
         # 261568 is too low
         it "actual answer above" do
           pp subject.avoidance
         end
 
         it "results survive" do
-          expect(subject.avoidance).to eq 261568
+          expect(subject.avoidance).not_to eq 261568
         end
       end
     end
 
-    context "All Basins" do
+    context "All Kinds of Basins" do
       before(:all) do
         @subject = SmokeBasin.new Support.file_to_list __FILE__.gsub('spec.rb', 'sample_all_basins.txt')
       end
       subject { @subject }
 
       describe "Part 1" do
-        it "actual answer above" do
-          pp subject.low_points
-          pp subject.sum_of_low_points
+        it "manual answer agrees" do
+          expect(subject.sum_of_low_points).to eq 53
         end
       end
 
       describe "Part 2" do
-        it "actual answer above" do
-          pp subject.avoidance
+        it "manual answer agrees" do
+          expect(subject.avoidance).to eq 378
         end
       end
     end
