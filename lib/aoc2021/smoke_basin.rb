@@ -17,12 +17,8 @@ module Aoc2021
     def heightmap(x, y); @report[y][x]; end
 
     # return the neighbors one step taller than I, but nines don't count
-    # ... or, if I'm at eight, nobody can be
+    # ... or, if I'm at or over eight, nobody can be
     def taller me, *neighbors
-    # neighbors.filter do |neighbor|
-    #   height = heightmap(*neighbor)
-    #   (height != 9) and (height == (me + 1))
-    # end
       if me < 8
         neighbors.filter do |neighbor|
           (me + 1) == heightmap(*neighbor)
