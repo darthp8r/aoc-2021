@@ -111,14 +111,13 @@ module Aoc2021
         end
       end
 
-      describe "Part 2" ,:skip => "261568 is too low" do
-        # 261568 is too low
+      describe "Part 2" do
         it "actual answer above" do
           pp subject.avoidance
         end
 
         it "results survive" do
-          expect(subject.avoidance).not_to eq 261568
+          expect(subject.avoidance).to eq 821560
         end
       end
     end
@@ -137,7 +136,26 @@ module Aoc2021
 
       describe "Part 2" do
         it "manual answer agrees" do
-          expect(subject.avoidance).to eq 378
+          expect(subject.avoidance).to eq 900
+        end
+      end
+    end
+
+    context "Adjacent Basins" do
+      before(:all) do
+        @subject = SmokeBasin.new Support.file_to_list __FILE__.gsub('spec.rb', 'sample_adjacents.txt')
+      end
+      subject { @subject }
+
+      describe "Part 1" do
+        it "manual answer agrees" do
+          expect(subject.sum_of_low_points).to eq 10
+        end
+      end
+
+      describe "Part 2" do
+        it "manual answer agrees" do
+          expect(subject.avoidance).to eq 8
         end
       end
     end

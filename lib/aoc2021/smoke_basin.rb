@@ -16,22 +16,17 @@ module Aoc2021
     # column-major coordinates broke me brain
     def heightmap(x, y); @report[y][x]; end
 
-    # return the neighbors one step taller than I, but nines don't count
-    # ... or, if I'm at or over eight, nobody can be
+    # return the neighbors taller than I, but nines don't count
     def taller me, *neighbors
-      if me < 8
-        neighbors.filter do |neighbor|
-          (me + 1) == heightmap(*neighbor)
-        end
-      else
-        []
+      neighbors.filter do |neighbor|
+        height = heightmap(*neighbor)
+        (height != 9) and (me < height)
       end
     end
 
     # return all the neighbors one-taller than this point
     def climbing_out x, y
       center = heightmap(x, y)
-    # puts "> #{x}:#{y} CLIMBING OUT FROM #{center}"
       follow =
         if y.zero?          # nothing above
           if x.zero?        # upper left
@@ -58,22 +53,16 @@ module Aoc2021
             taller center, [x-1, y], [x, y-1], [x+1, y], [x, y+1]
           end
         end
-    # puts "- #{x}:#{y} Neighbors one-taller than #{center} at [#{x}, #{y}] are #{follow}"
       hoser = follow.inject([]) do |memo, neighbor|
-    #   puts "+ #{neighbor}"
         memo += climbing_out(*neighbor)
         memo
       end
-    # puts ". #{x}:#{y} #{follow + hoser}"
       follow + hoser
     end
 
     def basin_sizes_and_coordinates
       low_points.inject(Hash.new([])) do |memo, trough|
-    #   puts ""
-    #   puts "SWIMMING UP FROM #{trough}"
         basin = climbing_out(*trough).uniq
-    #   puts "...........BASIN #{basin}"
         memo[1 + basin.length] += [[trough, *basin]] # basins of this size
         memo
       end
@@ -88,10 +77,6 @@ module Aoc2021
     end
 
     def avoidance
-    # hoser = basin_sizes
-    # pp "#{hoser.sort}"
-    # pp "#{hoser.sort.last(3)}"
-    # hoser.sort.last(3).reduce(:*)
       basin_sizes.sort.last(3).reduce(:*)  # same as inject, but the synonym is more apropos
     end
 
