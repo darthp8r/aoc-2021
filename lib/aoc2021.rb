@@ -23,6 +23,8 @@ require "aoc2021/syntax_scoring"
 
 require "aoc2021/dumbo_octopus"
 
+require "aoc2021/passage_pathing"
+
 module Aoc2021
   class Error < StandardError; end
 
