@@ -25,6 +25,8 @@ require "aoc2021/dumbo_octopus"
 
 require "aoc2021/passage_pathing"
 
+require "aoc2021/transparent_origami"
+
 module Aoc2021
   class Error < StandardError; end
 
