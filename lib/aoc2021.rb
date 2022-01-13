@@ -27,6 +27,8 @@ require "aoc2021/passage_pathing"
 
 require "aoc2021/transparent_origami"
 
+require "aoc2021/extended_polymerization"
+
 module Aoc2021
   class Error < StandardError; end
 
