@@ -8,13 +8,13 @@ module Aoc2021
 
       describe "Part 1" do
         it "sample data agrees" do
-          expect(subject.subtractive).to eq 1588
+          expect(subject.element_range).to eq 1588
         end
       end
 
       describe "Part 2" do
-        it "sample data agrees" ,:skip do
-          expect(subject.subtractive 40).to eq 2188189693529
+        it "sample data agrees" do
+          expect(subject.element_range 40).to eq 2188189693529
         end
       end
     end
@@ -27,21 +27,21 @@ module Aoc2021
 
       describe "Part 1" do
         it "actual answer above" do
-          pp subject.subtractive
+          pp subject.element_range
         end
 
         it "results survive" do
-          expect(subject.subtractive).to eq 4244
+          expect(subject.element_range).to eq 4244
         end
       end
 
-      describe "Part 2" ,:skip do
+      describe "Part 2" do
         it "actual answer above" do
-          pp subject.part_deux
+          pp subject.element_range 40
         end
 
         it "results survive" do
-          expect(subject.part_deux).to eq 2222
+          expect(subject.element_range 40).to eq 4807056953866
         end
       end
     end
